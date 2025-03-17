@@ -1,40 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Criptare Mesaje pe Baza unui Cuvânt Cheie
 
-## Getting Started
+## Funcții
 
-First, run the development server:
+- [Aplicația live](#criptare-mesaj)
+- [Link la funcție pentru criptare mesaj](src/utils/encrypt.ts)
+- [Link la funcție pentru decriptare mesaj](src/utils/decrypt.ts)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Descriere
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Acest proiect implementează o metodă proprie de criptare a mesajelor folosind un cuvânt cheie. Mircea și Vasilică au dorit să trimită mesaje criptate, iar soluția lor se bazează pe criptarea unui mesaj utilizând un cuvânt cheie format din litere distincte.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Proiectul este structurat într-o aplicație web care permite criptarea și decriptarea mesajelor prin introducerea unui cuvânt cheie și a unui mesaj de criptat/decriptat. Utilizatorii pot încărca fișiere text și pot vizualiza mesajele criptate sau decriptate în funcție de acțiunea aleasă.
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Taskul Inițial
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+**Metodă proprie de criptare**
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Mircea şi Vasilică vor să-şi trimită mesaje pe care alţii să nu le înţeleagă. Au citit ei despre spioni şi modalităţi de a scrie mesaje şi, în final, au imaginat un mod de criptare a unui mesaj care foloseşte “cuvânt cheie”.
 
-## Learn More
+Alegându-şi un cuvânt cheie format numai din litere distincte, ei numără literele acestuia şi împart mesajul în grupe de lungime egală cu numărul de litere ale cuvântului cheie, şi le aşează una sub alta. Desigur, se poate întâmpla ca ultima grupă să fie incompletă, aşa că o completează cu spaţii. Apoi numerotează literele cuvântului cheie în ordinea apariţiei lor în alfabetul englez. Fiecare cuvânt se termină cu simbol „\_”. În final, rescriu mesajul astfel: coloana de sub litera numerotată cu 1, urmată de coloana de sub litera numerotată cu 2, etc. înlocuind totodată şi spaţiile cu caracterul ‘\*’ (asterisc).
 
-To learn more about Next.js, take a look at the following resources:
+### Exemplu:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+- **Cuvânt cheie**: criptam
+- **Mesaj**: "Incercam sa lucram cu coduri si criptari."
+- **Cuvânt cheie**: criptam (are 7 litere)
+- **Numerotare**: 2635714
+- **Împărțire în grupe**:
+  Incerca | m sa lu | cram cu | coduri | si cri | ptari.
+- **Codificare**: 2635714
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Explicații:
 
-## Deploy on Vercel
+Mesajul original este împărțit în grupe de lungime 7 (pentru cuvântul cheie `criptam`) și rescris în ordine conform numerotării literelor din cuvântul cheie. Apoi, literele sunt plasate în coloane conform ordinii alfabetice, iar spațiile sunt înlocuite cu `*`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Cum să rulezi aplicația
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+- Clonează acest repository pe computerul tău.
+- Instalează toate dependențele folosind comanda `npm install`.
+- Lansează aplicația cu `npm start` și accesează aplicația în browser la `http://localhost:3000`.
+
+### Exemplu de criptare:
+
+- **Cuvânt cheie**: criptam
+- **Mesaj**: "Incercam sa lucram cu coduri si criptari."
+- **Mesaj criptat**: `clcrr._Imc**p_csaoia_auuii*_eamd*r_n*rcst_r**u ci_`
+
+## Tehnologii folosite
+
+- **React**: Biblioteca principală pentru dezvoltarea interfeței utilizator.
+- **Material UI**: Utilizat pentru componente vizuale și stilizare.
+- **mui-file-input**: Componentă pentru încărcarea fișierelor.
+- **JavaScript/TypeScript**: Limbaje utilizate pentru logica aplicației.
+
+## Licență
+
+Acest proiect este disponibil sub licența MIT. Vezi fișierul [LICENSE](LICENSE) pentru mai multe informații.
