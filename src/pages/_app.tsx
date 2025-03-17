@@ -1,6 +1,25 @@
-import "@/styles/globals.css";
-import type { AppProps } from "next/app";
+import { AppProps } from "next/app";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
+import TopBar from "../components/TopBar";
+import { Box } from "@mui/material";
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+const theme = createTheme({
+  palette: {
+    mode: "light",
+  },
+});
+
+function MyApp({ Component, pageProps }: AppProps) {
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <TopBar />
+      <Box sx={{ pt: 8 }}>
+        <Component {...pageProps} />
+      </Box>
+    </ThemeProvider>
+  );
 }
+
+export default MyApp;
