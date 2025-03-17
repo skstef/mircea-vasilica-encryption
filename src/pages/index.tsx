@@ -14,11 +14,12 @@ export default function Home() {
       <Card elevation={3}>
         <CardContent>
           <Typography variant="h4" align="center" gutterBottom>
-            Encryption/Decryption App
+            Mircea & Vasilica Encryption
           </Typography>
           <Typography variant="body1" color="textSecondary" gutterBottom>
-            Encrypt and decrypt your text files easily. Select an option below
-            to get started.
+            Criptați și decriptați mesajele sigur și cu ușurință prin
+            <br />
+            <b>Algoritmul Mircea și Vasilica.</b>
           </Typography>
           <Stack
             direction="row"
@@ -28,12 +29,12 @@ export default function Home() {
           >
             <Link href="/encryption" passHref>
               <Button variant="contained" size="large" sx={{ px: 5 }}>
-                Encryption
+                Criptare
               </Button>
             </Link>
             <Link href="/decryption" passHref>
               <Button variant="contained" size="large" sx={{ px: 5 }}>
-                Decryption
+                Decriptare
               </Button>
             </Link>
           </Stack>

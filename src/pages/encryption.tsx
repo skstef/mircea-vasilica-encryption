@@ -41,7 +41,7 @@ export default function EncryptionPage() {
 
   const handleEncrypt = () => {
     if (!key || !message) {
-      setError("Please provide a key and message.");
+      setError("Vă rugăm să furnizați o cheie și un mesaj.");
       return;
     }
 
@@ -49,9 +49,9 @@ export default function EncryptionPage() {
     try {
       const encryptedMessage = encrypt(message, key);
       setOutput(encryptedMessage);
-      setSuccess("Message encrypted successfully!");
+      setSuccess("Mesajul a fost criptat cu succes!");
     } catch {
-      setError("Encryption failed. Please check your inputs.");
+      setError("Criptarea a eșuat. Vă rugăm să verificați intrările.");
     } finally {
       setLoading(false);
     }
@@ -61,33 +61,33 @@ export default function EncryptionPage() {
     <Container maxWidth="md" sx={{ mt: 4, mb: 4 }}>
       <Typography variant="h4" gutterBottom>
         <LockIcon fontSize="large" sx={{ verticalAlign: "middle", mr: 1 }} />
-        Encryption
+        Criptare
       </Typography>
       <Grid container spacing={3}>
         <Grid item xs={12} md={6}>
           <Card>
             <CardContent>
-              <Typography variant="h6" gutterBottom>
-                Input
+              <Typography variant="h6" gutterBottom sx={{ mb: 4 }}>
+                Date Intrare
               </Typography>
               <Stack spacing={3}>
                 <MuiFileInput
                   value={file}
                   onChange={handleFileUpload}
-                  label="Upload Text File"
+                  label="Încărcați fișierul text"
                   inputProps={{ accept: ".txt" }}
                   fullWidth
-                  placeholder="Choose a file"
+                  placeholder="Alegeți un fișier"
                 />
                 <TextField
-                  label="Encryption Key"
+                  label="Cheia de criptare"
                   value={key}
                   onChange={(e) => setKey(e.target.value)}
                   fullWidth
                   required
                 />
                 <TextField
-                  label="Message"
+                  label="Mesaj"
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   multiline
@@ -102,7 +102,7 @@ export default function EncryptionPage() {
                     loading ? <CircularProgress size={20} /> : <LockIcon />
                   }
                 >
-                  {loading ? "Encrypting..." : "Encrypt"}
+                  {loading ? "Se criptează..." : "Criptează"}
                 </Button>
               </Stack>
             </CardContent>
@@ -111,8 +111,8 @@ export default function EncryptionPage() {
         <Grid item xs={12} md={6}>
           <Card>
             <CardContent>
-              <Typography variant="h6" gutterBottom>
-                Output
+              <Typography variant="h6" gutterBottom sx={{ mb: 4 }}>
+                Date Ieșire
               </Typography>
               <TextField
                 value={output}
@@ -120,7 +120,7 @@ export default function EncryptionPage() {
                 rows={4}
                 fullWidth
                 InputProps={{ readOnly: true }}
-                placeholder="Encrypted message will appear here"
+                placeholder="Mesajul criptat va apărea aici"
               />
             </CardContent>
           </Card>

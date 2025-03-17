@@ -41,7 +41,7 @@ export default function DecryptionPage() {
 
   const handleDecrypt = () => {
     if (!key || !message) {
-      setError("Please provide a key and message.");
+      setError("Vă rugăm să furnizați o cheie și un mesaj.");
       return;
     }
 
@@ -49,9 +49,9 @@ export default function DecryptionPage() {
     try {
       const decryptedMessage = decrypt(message, key);
       setOutput(decryptedMessage);
-      setSuccess("Message decrypted successfully!");
+      setSuccess("Mesajul a fost decriptat cu succes!");
     } catch {
-      setError("Decryption failed. Please check your inputs.");
+      setError("Decriptarea a eșuat. Vă rugăm să verificați intrările.");
     } finally {
       setLoading(false);
     }
@@ -64,33 +64,33 @@ export default function DecryptionPage() {
           fontSize="large"
           sx={{ verticalAlign: "middle", mr: 1 }}
         />
-        Decryption
+        Decriptare
       </Typography>
       <Grid container spacing={3}>
         <Grid item xs={12} md={6}>
           <Card>
             <CardContent>
-              <Typography variant="h6" gutterBottom>
-                Input
+              <Typography variant="h6" gutterBottom sx={{ mb: 4 }}>
+                Date Intrare
               </Typography>
               <Stack spacing={3}>
                 <MuiFileInput
                   value={file}
                   onChange={handleFileUpload}
-                  label="Upload Text File"
+                  label="Încărcați fișierul text"
                   inputProps={{ accept: ".txt" }}
                   fullWidth
-                  placeholder="Choose a file"
+                  placeholder="Alegeți un fișier"
                 />
                 <TextField
-                  label="Decryption Key"
+                  label="Cheia de decriptare"
                   value={key}
                   onChange={(e) => setKey(e.target.value)}
                   fullWidth
                   required
                 />
                 <TextField
-                  label="Message"
+                  label="Mesaj"
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   multiline
@@ -105,7 +105,7 @@ export default function DecryptionPage() {
                     loading ? <CircularProgress size={20} /> : <LockOpenIcon />
                   }
                 >
-                  {loading ? "Decrypting..." : "Decrypt"}
+                  {loading ? "Se decriptează..." : "Decriptează"}
                 </Button>
               </Stack>
             </CardContent>
@@ -114,8 +114,8 @@ export default function DecryptionPage() {
         <Grid item xs={12} md={6}>
           <Card>
             <CardContent>
-              <Typography variant="h6" gutterBottom>
-                Output
+              <Typography variant="h6" gutterBottom sx={{ mb: 4 }}>
+                Date Ieșire
               </Typography>
               <TextField
                 value={output}
@@ -123,7 +123,7 @@ export default function DecryptionPage() {
                 rows={4}
                 fullWidth
                 InputProps={{ readOnly: true }}
-                placeholder="Decrypted message will appear here"
+                placeholder="Mesajul decriptat va apărea aici"
               />
             </CardContent>
           </Card>

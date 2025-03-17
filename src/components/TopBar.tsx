@@ -47,7 +47,7 @@ export default function TopBar() {
                 "&:hover": { color: "primary.main" },
               }}
             >
-              Encryption
+              Criptare
             </Button>
             <Button
               component={Link}
@@ -58,7 +58,7 @@ export default function TopBar() {
                 "&:hover": { color: "primary.main" },
               }}
             >
-              Decryption
+              Decriptare
             </Button>
           </Box>
         </Toolbar>
