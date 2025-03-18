@@ -1,14 +1,31 @@
-export function getAlphabeticalOrderKey(str: string) {
+export function getAlphabeticalOrderKey(str: string): number[] {
   const alphabet = "abcdefghijklmnopqrstuvwxyz";
-  const alphabeticalPosition: (number | null)[] = [];
+  const alphabeticalPosition: number[] = [];
 
-  for (const char of str.toLowerCase()) {
-    // Convert to lowercase to handle case sensitivity
-    const position = alphabet.indexOf(char) + 1; // Find position in alphabet (index + 1)
-    alphabeticalPosition.push(position > 0 ? position : null); // Push position or null if character is not found
+  // Convert to lowercase to handle case sensitivity
+  const lowerCaseStr = str.toLowerCase();
+
+  // Check for duplicate letters
+  const uniqueLetters = new Set<string>();
+  for (const char of lowerCaseStr) {
+    if (uniqueLetters.has(char)) {
+      throw new Error("The key contains duplicate letters.");
+    }
+    uniqueLetters.add(char);
   }
 
-  const sortedArr = [...alphabeticalPosition].sort((a, b) => a! - b!);
+  // Calculate alphabetical positions
+  for (const char of lowerCaseStr) {
+    const position = alphabet.indexOf(char) + 1; // Find position in alphabet (index + 1)
+    if (position > 0) {
+      alphabeticalPosition.push(position);
+    } else {
+      throw new Error("The key contains non-alphabetic symbols.");
+    }
+  }
+
+  // Sort positions and map to order
+  const sortedArr = [...alphabeticalPosition].sort((a, b) => a - b);
   const orderArr = alphabeticalPosition.map(
     (num) => sortedArr.indexOf(num) + 1
   );

@@ -1,4 +1,4 @@
-# Criptare Mesaje pe Baza unui Cuvânt Cheie
+# Criptare Mesaje pe Baza unui Cuvânt Cheie (Mircea şi Vasilică)
 
 ## Funcții
 
