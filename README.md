@@ -2,7 +2,7 @@
 
 ## Funcții
 
-- [Aplicația live](#criptare-mesaj)
+- [Aplicația live](https://mircea-vasilica-encryption.vercel.app/)
 - [Link la funcție pentru criptare mesaj](src/utils/encrypt.ts)
 - [Link la funcție pentru decriptare mesaj](src/utils/decrypt.ts)
 
