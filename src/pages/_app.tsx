@@ -3,6 +3,8 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import TopBar from "../components/TopBar";
 import { Box } from "@mui/material";
+import Footer from "@/components/Footer";
+import "../styles/globals.css";
 
 const theme = createTheme({
   palette: {
@@ -15,9 +17,10 @@ function MyApp({ Component, pageProps }: AppProps) {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <TopBar />
-      <Box sx={{ pt: 8 }}>
+      <Box sx={{ pt: 8, mb: 4 }}>
         <Component {...pageProps} />
       </Box>
+      <Footer />
     </ThemeProvider>
   );
 }
