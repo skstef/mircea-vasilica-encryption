@@ -33,7 +33,7 @@ export default function TopBar() {
               "&:hover": { color: "primary.main" },
             }}
           >
-            CryptoApp
+            Mircea & Vasilica
           </Typography>
 
           {/* Navigation Links */}
