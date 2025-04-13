@@ -21,7 +21,7 @@ export default function TopBar() {
             component={Link}
             href="/"
             sx={{
-              flexGrow: 1,
+              mr: "auto",
               fontWeight: "bold",
               color: "text.primary",
               textDecoration: "none",
