@@ -3,7 +3,7 @@ import { GetServerSidePropsContext } from "next";
 // Define types for better type safety
 interface SitemapUrl {
   path: string;
-  priority?: number;
+  priority?: string;
   changefreq?:
     | "always"
     | "hourly"
@@ -26,9 +26,9 @@ const CONFIG = {
 
 // Define pages with additional metadata
 const PAGES: SitemapUrl[] = [
-  { path: "", priority: 1.0, changefreq: "daily" },
-  { path: "encryption", priority: 0.9, changefreq: "weekly" },
-  { path: "decryption", priority: 0.9, changefreq: "weekly" },
+  { path: "", priority: "1.0", changefreq: "daily" },
+  { path: "encryption", priority: "0.9", changefreq: "weekly" },
+  { path: "decryption", priority: "0.9", changefreq: "weekly" },
 ];
 
 // Utility function to validate URL
