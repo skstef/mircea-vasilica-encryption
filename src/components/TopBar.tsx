@@ -37,7 +37,7 @@ export default function TopBar() {
               src={appIcon}
               alt="Criptarea lui Mircea și Vasilica"
             />
-            Home
+            Principala
           </Typography>
 
           {/* Navigation Links */}

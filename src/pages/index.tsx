@@ -3,7 +3,6 @@ import {
   Button,
   Container,
   Typography,
-  Stack,
   Card,
   CardContent,
   Box,
@@ -21,21 +20,6 @@ export default function Home() {
           <Typography
             variant="h1"
             sx={{
-              position: "absolute",
-              width: "1px",
-              height: "1px",
-              padding: "0",
-              margin: "-1px",
-              overflow: "hidden",
-              clip: "rect(0, 0, 0, 0)",
-              border: "0",
-            }}
-          >
-            {"Criptarea lui Mircea și Vasilica"}
-          </Typography>
-          <Typography
-            variant="h2"
-            sx={{
               fontSize: "2.125rem",
               lineHeight: "1.235",
               fontWeight: 400,
@@ -44,7 +28,7 @@ export default function Home() {
             align="center"
             gutterBottom
           >
-            Mircea & Vasilica Encryption
+            Criptarea lui Mircea și Vasilica
           </Typography>
           <Typography variant="body1" color="textSecondary" gutterBottom>
             Criptați și decriptați mesajele sigur și cu ușurință prin
@@ -68,6 +52,40 @@ export default function Home() {
           </Box>
         </CardContent>
       </Card>
+      {/* SEO Indices */}
+      <p
+        style={{
+          position: "absolute",
+          width: "1px",
+          height: "1px",
+          padding: "0",
+          margin: "-1px",
+          overflow: "hidden",
+          clip: "rect(0, 0, 0, 0)",
+          border: "0",
+        }}
+      >
+        {`Descriere
+Acest proiect implementează o metodă proprie de criptare a mesajelor folosind un cuvânt cheie. Mircea și Vasilică au dorit să trimită mesaje criptate, iar soluția lor se bazează pe criptarea unui mesaj utilizând un cuvânt cheie format din litere distincte.
+
+Proiectul este structurat într-o aplicație web care permite criptarea și decriptarea mesajelor prin introducerea unui cuvânt cheie și a unui mesaj de criptat/decriptat. Utilizatorii pot încărca fișiere text și pot vizualiza mesajele criptate sau decriptate în funcție de acțiunea aleasă.
+
+Taskul Inițial
+Metodă proprie de criptare
+
+Mircea şi Vasilică vor să-şi trimită mesaje pe care alţii să nu le înţeleagă. Au citit ei despre spioni şi modalităţi de a scrie mesaje şi, în final, au imaginat un mod de criptare a unui mesaj care foloseşte “cuvânt cheie”.
+
+Alegându-şi un cuvânt cheie format numai din litere distincte, ei numără literele acestuia şi împart mesajul în grupe de lungime egală cu numărul de litere ale cuvântului cheie, şi le aşează una sub alta. Desigur, se poate întâmpla ca ultima grupă să fie incompletă, aşa că o completează cu spaţii. Apoi numerotează literele cuvântului cheie în ordinea apariţiei lor în alfabetul englez. Fiecare cuvânt se termină cu simbol „_”. În final, rescriu mesajul astfel: coloana de sub litera numerotată cu 1, urmată de coloana de sub litera numerotată cu 2, etc. înlocuind totodată şi spaţiile cu caracterul ‘*’ (asterisc).
+
+Exemplu:
+Cuvânt cheie: criptam
+Mesaj: "Incercam sa lucram cu coduri si criptari."
+Cuvânt cheie: criptam (are 7 litere)
+Numerotare: 2635714
+Împărțire în grupe: Incerca | m sa lu | cram cu | coduri | si cri | ptari.
+Codificare: 2635714
+Mesaj criptat: clcrr._Imc**p_csaoia_auuii*_eamd*r_n*rcst_r**u ci_`}
+      </p>
     </Container>
   );
 }
