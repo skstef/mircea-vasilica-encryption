@@ -18,6 +18,7 @@ import {
 } from "@mui/icons-material";
 import { MuiFileInput } from "mui-file-input";
 import { decrypt } from "@/utils/decrypt";
+import Head from "next/head";
 
 export default function DecryptionPage() {
   const [file, setFile] = useState<File | null>(null);
@@ -99,7 +100,21 @@ export default function DecryptionPage() {
 
   return (
     <Container maxWidth="md" sx={{ mt: 4, mb: 4 }}>
-      <Typography variant="h4" gutterBottom>
+      <Head>
+        <title>Decriptare | Criptarea lui Mircea și Vasilica</title>
+      </Head>
+      <Typography
+        variant="h1"
+        sx={{
+          fontSize: "2rem",
+          lineHeight: "1.235",
+          fontWeight: 400,
+          marginBottom: "24px",
+          display: "flex",
+          alignItems: "center",
+        }}
+        gutterBottom
+      >
         <LockOpenIcon
           fontSize="large"
           sx={{ verticalAlign: "middle", mr: 1 }}

@@ -1,16 +1,11 @@
-import {
-  AppBar,
-  Toolbar,
-  Typography,
-  Button,
-  Container,
-  Box,
-} from "@mui/material";
+import { AppBar, Toolbar, Typography, Button, Container } from "@mui/material";
 import {
   LockOutlined as LockIcon,
   LockOpen as LockOpenIcon,
 } from "@mui/icons-material";
 import Link from "next/link";
+import Image from "next/image";
+import appIcon from "../assets/icon.svg";
 
 export default function TopBar() {
   return (
@@ -31,36 +26,51 @@ export default function TopBar() {
               color: "text.primary",
               textDecoration: "none",
               "&:hover": { color: "primary.main" },
+              display: "flex",
+              alignItems: "center",
+              gap: 1,
             }}
           >
-            Mircea & Vasilica
+            <Image
+              width={24}
+              priority
+              src={appIcon}
+              alt="Criptarea lui Mircea și Vasilica"
+            />
+            Home
           </Typography>
 
           {/* Navigation Links */}
-          <Box sx={{ display: "flex", gap: 2 }}>
-            <Button
-              component={Link}
-              href="/encryption"
-              startIcon={<LockIcon />}
-              sx={{
-                color: "text.primary",
-                "&:hover": { color: "primary.main" },
-              }}
-            >
-              Criptare
-            </Button>
-            <Button
-              component={Link}
-              href="/decryption"
-              startIcon={<LockOpenIcon />}
-              sx={{
-                color: "text.primary",
-                "&:hover": { color: "primary.main" },
-              }}
-            >
-              Decriptare
-            </Button>
-          </Box>
+          <nav>
+            <ul style={{ display: "flex", gap: 24, flexWrap: "wrap" }}>
+              <li>
+                <Button
+                  component={Link}
+                  href="/encryption"
+                  startIcon={<LockIcon />}
+                  sx={{
+                    color: "text.primary",
+                    "&:hover": { color: "primary.main" },
+                  }}
+                >
+                  Criptare
+                </Button>
+              </li>
+              <li>
+                <Button
+                  component={Link}
+                  href="/decryption"
+                  startIcon={<LockOpenIcon />}
+                  sx={{
+                    color: "text.primary",
+                    "&:hover": { color: "primary.main" },
+                  }}
+                >
+                  Decriptare
+                </Button>
+              </li>
+            </ul>
+          </nav>
         </Toolbar>
       </Container>
     </AppBar>

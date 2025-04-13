@@ -17,7 +17,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <TopBar />
-      <Box sx={{ pt: 8, mb: 4 }}>
+      <Box sx={{ pt: 3, mb: 4 }}>
         <Component {...pageProps} />
       </Box>
       <Footer />

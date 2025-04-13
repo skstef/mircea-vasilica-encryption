@@ -39,6 +39,7 @@ export default function Footer() {
           target="_blank"
           rel="noopener noreferrer"
           color="inherit"
+          aria-label="Github"
         >
           <GitHubIcon fontSize="small" />
         </Link>
@@ -47,6 +48,7 @@ export default function Footer() {
           target="_blank"
           rel="noopener noreferrer"
           color="inherit"
+          aria-label="Linkedin"
         >
           <LinkedInIcon fontSize="small" />
         </Link>
