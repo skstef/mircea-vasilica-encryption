@@ -26,7 +26,7 @@ export default function Footer() {
           Stef S.
         </Link>
         {"  "}
-        🇲🇩⚔️🌙
+        🌙🇲🇩⚔️
       </Typography>
       <Stack
         direction="row"
