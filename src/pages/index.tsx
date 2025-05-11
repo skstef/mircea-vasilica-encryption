@@ -31,10 +31,28 @@ export default function Home() {
             Criptarea lui Mircea și Vasilica
           </Typography>
           <Typography variant="body1" color="textSecondary" gutterBottom>
-            Criptați și decriptați mesajele sigur și cu ușurință prin
-            <br />
-            <b>Algoritmul Mircea și Vasilica.</b>
+            Criptați și decriptați mesajele sigur și cu ușurință
           </Typography>
+          <Box sx={{ display: "flex", gap: 1, justifyContent: "center" }}>
+            <Typography
+              component="h1"
+              variant="body1"
+              color="textSecondary"
+              gutterBottom
+            >
+              <b>Algoritmul Mircea și Vasilica</b>
+            </Typography>
+            <Typography variant="body1" color="textSecondary" gutterBottom>
+              <Link
+                style={{ color: "#000", fontSize: 15 }}
+                href={
+                  "https://github.com/skstef/mircea-vasilica-encryption/blob/main/src/utils/encrypt.ts"
+                }
+              >
+                Cod sursă
+              </Link>
+            </Typography>
+          </Box>
           <Box
             justifyContent="center"
             sx={{ display: "flex", mt: 4, flexWrap: "wrap", gap: 3 }}

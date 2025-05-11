@@ -21,14 +21,14 @@ const CONFIG = {
     process.env.NEXT_PUBLIC_BASE_URL ||
     "https://mircea-vasilica-encryption.vercel.app",
   DEFAULT_PRIORITY: 0.8,
-  DEFAULT_CHANGEFREQ: "weekly" as const,
+  DEFAULT_CHANGEFREQ: "monthly" as const,
 };
 
 // Define pages with additional metadata
 const PAGES: SitemapUrl[] = [
   { path: "", priority: "1.0", changefreq: "daily" },
-  { path: "encryption", priority: "0.9", changefreq: "weekly" },
-  { path: "decryption", priority: "0.9", changefreq: "weekly" },
+  { path: "encryption", priority: "0.9" },
+  { path: "decryption", priority: "0.9" },
 ];
 
 // Utility function to validate URL
@@ -43,7 +43,7 @@ const isValidUrl = (url: string): boolean => {
 
 // Generate sitemap with proper formatting and additional SEO metadata
 function generateSiteMap(): string {
-  const currentDate = new Date().toISOString().split("T")[0];
+  const currentDate = new Date().toISOString();
 
   try {
     const urls = PAGES.map(({ path, priority, changefreq, lastmod }) => {
@@ -63,12 +63,15 @@ function generateSiteMap(): string {
     }).join("");
 
     return `<?xml version="1.0" encoding="UTF-8"?>
-      <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-              xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-                                  http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-        ${urls}
-      </urlset>`;
+  <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+    http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd
+    http://www.w3.org/1999/xhtml
+    http://www.w3.org/2002/08/xhtml/xhtml1-strict.xsd">
+      ${urls}
+   </urlset>`;
   } catch (error) {
     console.error("Sitemap generation failed:", error);
     throw error;

@@ -6,7 +6,9 @@ export default function Document() {
       <Head>
         <meta
           name="description"
-          content={`Mircea şi Vasilică vor să-şi trimită mesaje pe care alţii să nu le înţeleagă. Au citit ei despre spioni şi modalităţi de a scrie mesaje şi, în final, au imaginat un mod de criptare a unui mesaj care foloseşte “cuvânt cheie”.`}
+          content={
+            "Mircea şi Vasilică vor să-şi trimită mesaje pe care alţii să nu le înţeleagă. Au imaginat un mod de criptare. Descoperă cum funcționează!"
+          }
         />
         <link
           rel="icon"
